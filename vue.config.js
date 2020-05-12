@@ -3,7 +3,12 @@ const IgnoreNotFoundExportPlugin = require('./src/lib/webpack/IgnoreNotFoundExpo
 
 module.exports = {
   runtimeCompiler: true,
+  devServer: {
+    port: 80,
+    host: '0.0.0.0'
+  },
   chainWebpack: (config) => {
+
     config.module
       .rule('i18n')
       .resourceQuery(/blockType=i18n/)
